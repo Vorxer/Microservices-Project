@@ -1,7 +1,7 @@
 package com.dinuras.group_service.Controller;
 
-import com.dinuras.vessel.Model.Vessel;
-import com.dinuras.vessel.Service.VesselServiceImpl;
+import com.dinuras.group_service.Model.Group;
+import com.dinuras.group_service.Service.GroupServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/vessel")
+@RequestMapping("/group")
 public class GroupController {
 
     @Autowired
-    VesselServiceImpl vesselService;
+    GroupServiceImpl groupService;
 
     @RequestMapping("/ping")
     public String ping(){
-        return "vessel service 200";
+        return "group service 200";
     }
 
-    @RequestMapping("/getVessel/{id}")
-    public Vessel getVessel(@PathVariable int id){
-        return vesselService.getVesselByID(id);
+    @RequestMapping("/getGroup/{id}")
+    public Group getGroup(@PathVariable int id){
+        return groupService.getGroupByID(id);
     }
 
-    @RequestMapping("/vessels")
-    public List<Vessel> getAllVessels(){
-        return vesselService.getVessels();
+    @RequestMapping("/groups")
+    public List<Group> getAllGroups(){
+        return groupService.getGroups();
     }
 
     @RequestMapping("/add")
-    public Vessel getAllVessels(@RequestBody Vessel vessel){
-        return vesselService.add(vessel);
+    public Group getAllGroups(@RequestBody Group group){
+        return groupService.add(group);
     }
 }

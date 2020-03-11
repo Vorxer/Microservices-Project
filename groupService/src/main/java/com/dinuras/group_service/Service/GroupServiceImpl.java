@@ -1,7 +1,7 @@
 package com.dinuras.group_service.Service;
 
-import com.dinuras.vessel.Model.Vessel;
-import com.dinuras.vessel.Repository.VesselRepository;
+import com.dinuras.group_service.Model.Group;
+import com.dinuras.group_service.Repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class VesselServiceImpl implements VesselService {
+public class GroupServiceImpl implements GroupService {
 
     @Autowired
-    VesselRepository repository;
+    GroupRepository repository;
 
     @Bean
     RestTemplate restTemplate(){
@@ -22,19 +22,19 @@ public class VesselServiceImpl implements VesselService {
     }
 
     @Override
-    public Vessel getVesselByID(int id){
-        Optional<Vessel> vessel = repository.findById(id);
+    public Group getGroupByID(int id){
+        Optional<Group> group = repository.findById(id);
 
-        if(vessel.isPresent())
-            return vessel.get();
+        if(group.isPresent())
+            return group.get();
 
         return null;
     }
 
     @Override
-    public Vessel add(Vessel vessel) {
+    public Group add(Group group) {
 
-        return repository.save(vessel);
+        return repository.save(group);
 
     }
 
@@ -47,7 +47,7 @@ public class VesselServiceImpl implements VesselService {
 
 
     @Override
-    public List<Vessel> getVessels() {
+    public List<Group> getGroups() {
 
         return repository.findAll();
 
