@@ -1,11 +1,12 @@
 package com.dinuras.group_service.Model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Data
+@Entity
 public class OperationalBase {
 
     @Id
@@ -14,6 +15,6 @@ public class OperationalBase {
 
     String name;
 
-    @OneToMany(mappedBy = "operationalBase")
-    List<Group> groups;
+    @OneToMany(mappedBy = "base")
+    List<Fleet> fleets;
 }

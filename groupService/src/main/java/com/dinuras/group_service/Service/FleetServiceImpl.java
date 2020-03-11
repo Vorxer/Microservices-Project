@@ -1,7 +1,7 @@
 package com.dinuras.group_service.Service;
 
-import com.dinuras.group_service.Model.Group;
-import com.dinuras.group_service.Repository.GroupRepository;
+import com.dinuras.group_service.Model.Fleet;
+import com.dinuras.group_service.Repository.FleetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GroupServiceImpl implements GroupService {
+public class FleetServiceImpl implements FleetService {
 
     @Autowired
-    GroupRepository repository;
+    FleetRepository repository;
 
     @Bean
     RestTemplate restTemplate(){
@@ -22,8 +22,8 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group getGroupByID(int id){
-        Optional<Group> group = repository.findById(id);
+    public Fleet getFleetByID(int id){
+        Optional<Fleet> group = repository.findById(id);
 
         if(group.isPresent())
             return group.get();
@@ -32,7 +32,7 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group add(Group group) {
+    public Fleet add(Fleet group) {
 
         return repository.save(group);
 
@@ -47,7 +47,7 @@ public class GroupServiceImpl implements GroupService {
 
 
     @Override
-    public List<Group> getGroups() {
+    public List<Fleet> getFleets() {
 
         return repository.findAll();
 

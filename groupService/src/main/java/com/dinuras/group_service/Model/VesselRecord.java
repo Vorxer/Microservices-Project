@@ -16,6 +16,5 @@ public class VesselRecord {
     Integer vesselName;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    Group group;
-
+    Fleet fleet;
 }

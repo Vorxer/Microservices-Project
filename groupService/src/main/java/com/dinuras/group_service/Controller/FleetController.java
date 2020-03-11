@@ -1,7 +1,7 @@
 package com.dinuras.group_service.Controller;
 
-import com.dinuras.group_service.Model.Group;
-import com.dinuras.group_service.Service.GroupServiceImpl;
+import com.dinuras.group_service.Model.Fleet;
+import com.dinuras.group_service.Service.FleetServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/group")
-public class GroupController {
+@RequestMapping("/fleet")
+public class FleetController {
 
     @Autowired
-    GroupServiceImpl groupService;
+    FleetServiceImpl fleetService;
 
     @RequestMapping("/ping")
     public String ping(){
-        return "group service 200";
+        return "fleet service 200";
     }
 
-    @RequestMapping("/getGroup/{id}")
-    public Group getGroup(@PathVariable int id){
-        return groupService.getGroupByID(id);
+    @RequestMapping("/getFleet/{id}")
+    public Fleet getFleet(@PathVariable int id){
+        return fleetService.getFleetByID(id);
     }
 
     @RequestMapping("/groups")
-    public List<Group> getAllGroups(){
-        return groupService.getGroups();
+    public List<Fleet> getAllFleets(){
+        return fleetService.getFleets();
     }
 
     @RequestMapping("/add")
-    public Group getAllGroups(@RequestBody Group group){
-        return groupService.add(group);
+    public Fleet getAllFleets(@RequestBody Fleet group){
+        return fleetService.add(group);
     }
 }
