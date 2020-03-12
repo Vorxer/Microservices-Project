@@ -22,12 +22,12 @@ public class FleetController {
         return "fleet service 200";
     }
 
-    @RequestMapping("/getFleet/{id}")
+    @RequestMapping("/fleet/{id}")
     public Fleet getFleet(@PathVariable int id){
         return fleetService.getFleetByID(id);
     }
 
-    @RequestMapping("/groups")
+    @RequestMapping("/fleets")
     public List<Fleet> getAllFleets(){
         return fleetService.getFleets();
     }
