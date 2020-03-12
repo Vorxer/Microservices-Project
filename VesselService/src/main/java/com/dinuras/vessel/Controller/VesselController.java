@@ -22,7 +22,7 @@ public class VesselController {
         return "vessel service 200";
     }
 
-    @RequestMapping("/getVessel/{id}")
+    @RequestMapping("/vessel/{id}")
     public Vessel getVessel(@PathVariable int id){
         return vesselService.getVesselByID(id);
     }
@@ -32,7 +32,7 @@ public class VesselController {
         return vesselService.getVessels();
     }
 
-    @RequestMapping("/getSpecificVessels")
+    @RequestMapping("/specificVessels")
     public List<Vessel> getSpecificVessels(@RequestBody List<Integer> IDS){
         return vesselService.getSpecificVessels(IDS);
     }
