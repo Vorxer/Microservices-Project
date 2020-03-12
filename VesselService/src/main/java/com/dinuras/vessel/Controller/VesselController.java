@@ -32,6 +32,11 @@ public class VesselController {
         return vesselService.getVessels();
     }
 
+    @RequestMapping("/getSpecificVessels")
+    public List<Vessel> getSpecificVessels(@RequestBody List<Integer> IDS){
+        return vesselService.getSpecificVessels(IDS);
+    }
+
     @RequestMapping("/add")
     public Vessel getAllVessels(@RequestBody Vessel vessel){
         return vesselService.add(vessel);

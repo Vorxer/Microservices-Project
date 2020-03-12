@@ -13,7 +13,7 @@ public class Vessel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer ID;
+    public Integer ID;
 
 
     @OneToOne(cascade = CascadeType.ALL)

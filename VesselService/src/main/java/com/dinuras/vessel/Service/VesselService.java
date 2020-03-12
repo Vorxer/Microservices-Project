@@ -12,4 +12,6 @@ public interface VesselService {
     void delete(Integer id);
 
     List<Vessel> getVessels();
+
+    public List<Vessel> getSpecificVessels(List<Integer> vesselList);
 }
