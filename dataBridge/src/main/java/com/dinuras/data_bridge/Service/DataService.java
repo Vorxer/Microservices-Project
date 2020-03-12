@@ -42,7 +42,6 @@ public class dataService {
     public List<Vessel> getVessels(){
 
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        //ResponseEntity<Vessel[]> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.GET, httpEntity, Vessel[].class);
         ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
         return responseEntity.getBody();
 
@@ -63,29 +62,7 @@ public class dataService {
 
     }
 
-    public List<Vessel> getFleetVessels(int fleetID){/*
-        HttpEntity<List<Vessel>> httpEntity = new HttpEntity<List<Vessel>>(
-                getFleet(fleetID).vesselRecords,
-                new HttpHeaders());
-        ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
-        return responseEntity.getBody();
-        String URL = "";*/
-
-        /*return getSpecificVessels(
-                restTemplate().exchange(
-                        "URL" + fleetID,
-                        HttpMethod.GET,
-                        new HttpEntity<>(
-                                "",
-                                new HttpHeaders()),
-                            Fleet.class)
-                        .getBody()
-                .vesselRecords
-                .stream()
-                .map(VesselRecord::getID)
-                .collect(Collectors.toList()));*/
-
-
+    public List<Vessel> getFleetVessels(int fleetID){
         return getSpecificVessels(getFleet(fleetID).vesselRecords.stream().map(VesselRecord::getID).collect(Collectors.toList()));
     }
 
