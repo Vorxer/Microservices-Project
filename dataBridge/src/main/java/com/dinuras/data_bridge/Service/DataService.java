@@ -17,49 +17,45 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class dataService {
+public class DataService {
 
     @Bean
-    //@LoadBalanced
     RestTemplate restTemplate(){
         return new RestTemplate();
     }
 
+    static final String vesselURL = "http://localhost:8081/vessel/";
+    static final String fleetURL =  "http://localhost:8092/fleet/";
+
     public Vessel getVessel(int id){
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<Vessel> responseEntity = restTemplate().exchange("http://localhost:xxxx" + id, HttpMethod.GET, httpEntity, Vessel.class);
+        ResponseEntity<Vessel> responseEntity = restTemplate().exchange(vesselURL + "vessel/" + id, HttpMethod.GET, httpEntity, Vessel.class);
+        return responseEntity.getBody();
+    }
+
+    public List<Vessel> getVessels(){
+        HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
+        ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange(vesselURL + "vessels/", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
+        return responseEntity.getBody();
+    }
+
+    public List<Vessel> getSpecificVessels(List<Integer> IDS){
+        HttpEntity<List> httpEntity = new HttpEntity<List>(IDS, new HttpHeaders());
+        ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange(vesselURL + "specificVessels/", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
         return responseEntity.getBody();
     }
 
     public Fleet getFleet(int id){
-
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<Fleet> responseEntity = restTemplate().exchange("http://localhost:xxxx" + id, HttpMethod.GET, httpEntity, Fleet.class);
-        return responseEntity.getBody();
-
-    }
-
-    public List<Vessel> getVessels(){
-
-        HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
-        return responseEntity.getBody();
-
-    }
-
-    public List<Vessel> getSpecificVessels(List<Integer> IDS){
-
-        HttpEntity<List> httpEntity = new HttpEntity<List>(IDS, new HttpHeaders());
-        ResponseEntity<List<Vessel>> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Vessel>>() {});
+        ResponseEntity<Fleet> responseEntity = restTemplate().exchange(fleetURL + "fleet/" + id, HttpMethod.GET, httpEntity, Fleet.class);
         return responseEntity.getBody();
     }
+
 
     public List<Fleet> getFleets(){
-
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<List<Fleet>> responseEntity = restTemplate().exchange("http://localhost:xxxx", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Fleet>>() {});
+        ResponseEntity<List<Fleet>> responseEntity = restTemplate().exchange(fleetURL+"fleets/", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<Fleet>>() {});
         return responseEntity.getBody();
-
     }
 
     public List<Vessel> getFleetVessels(int fleetID){
