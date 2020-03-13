@@ -1,6 +1,7 @@
 package com.dinuras.vessel.Service;
 
 import com.dinuras.vessel.Model.Vessel;
+import com.dinuras.vessel.Model.VesselResponse;
 
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface VesselService {
     List<Vessel> getVessels();
 
     public List<Vessel> getSpecificVessels(List<Integer> vesselList);
+
+    public VesselResponse infoResponse(int id);
+
 }

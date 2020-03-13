@@ -1,6 +1,7 @@
 package com.dinuras.vessel.Service;
 
 import com.dinuras.vessel.Model.Vessel;
+import com.dinuras.vessel.Model.VesselResponse;
 import com.dinuras.vessel.Repository.VesselRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -62,6 +63,17 @@ public class VesselServiceImpl implements VesselService {
 
         return repository.findAllById(vesselList);
 
+    }
+
+    @Override
+    public VesselResponse infoResponse(int id){
+        Vessel vessel = getVesselByID(id);
+        VesselResponse vesselResponse = new VesselResponse();
+        vesselResponse.name = vessel.getName();
+        vesselResponse.VRN =vessel.getVRN();
+        vesselResponse.ShipClass = vessel.getShipClass().getName();
+        vesselResponse.CO = vessel.getCommandingOfficer().getName();
+        return vesselResponse;
     }
 
 
