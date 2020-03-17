@@ -21,8 +21,6 @@ public class ShipClass {
 
     Integer complement;
 
-    //@DecimalMin(value = "0.0", inclusive = false)
-    //@Digits(integer=3, fraction=2)
     BigDecimal standardLength;
     BigDecimal beam;
     BigDecimal draft;
@@ -30,9 +28,9 @@ public class ShipClass {
     BigDecimal displacement;
 
     BigDecimal cruiseSpeed;
-    //BigDecimal flankSpeed;
+    BigDecimal flankSpeed;
 
-    Integer OperationalRange;
+    Integer operationalRange;
 
     Integer stsCombatRating;
     Integer aswCombatRating;
@@ -111,14 +109,6 @@ public class ShipClass {
         this.cruiseSpeed = cruiseSpeed;
     }
 
-    public Integer getOperationalRange() {
-        return OperationalRange;
-    }
-
-    public void setOperationalRange(Integer operationalRange) {
-        OperationalRange = operationalRange;
-    }
-
     public Integer getStsCombatRating() {
         return stsCombatRating;
     }
@@ -149,5 +139,21 @@ public class ShipClass {
 
     public void setPdsRating(Integer pdsRating) {
         this.pdsRating = pdsRating;
+    }
+
+    public BigDecimal getFlankSpeed() {
+        return flankSpeed;
+    }
+
+    public void setFlankSpeed(BigDecimal flankSpeed) {
+        this.flankSpeed = flankSpeed;
+    }
+
+    public Integer getOperationalRange() {
+        return operationalRange;
+    }
+
+    public void setOperationalRange(Integer operationalRange) {
+        this.operationalRange = operationalRange;
     }
 }

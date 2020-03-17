@@ -18,11 +18,6 @@ public class VesselController {
     @Autowired
     VesselServiceImpl vesselService;
 
-    @RequestMapping("/ping")
-    public String ping(){
-        return "vessel service 200";
-    }
-
     @RequestMapping("/vessel/{id}")
     public Vessel getVessel(@PathVariable int id){
         return vesselService.getVesselByID(id);

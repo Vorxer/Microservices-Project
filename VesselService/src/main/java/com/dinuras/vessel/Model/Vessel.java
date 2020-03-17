@@ -17,6 +17,18 @@ public class Vessel {
     public String name;
     public String VRN;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    Officer commandingOfficer;
+
+    @JoinColumn
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    ShipClass shipClass;
+
+    Integer availableRange;
+    Integer enduarance;
+    Integer combatReaddinesssRating;
+
     public String getName() {
         return name;
     }
@@ -32,18 +44,6 @@ public class Vessel {
     public void setVRN(String VRN) {
         this.VRN = VRN;
     }
-
-    @OneToOne(cascade = CascadeType.ALL)
-    Officer commandingOfficer;
-
-    @JoinColumn
-    @JsonIgnore
-    @ManyToOne(cascade = CascadeType.ALL)
-    ShipClass shipClass;
-
-    Integer availableRange;
-    Integer enduarance;
-    Integer combatReaddinesssRating;
 
     public Integer getID() {
         return ID;

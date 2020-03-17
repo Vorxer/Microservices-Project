@@ -57,10 +57,6 @@ public class VesselServiceImpl implements VesselService {
     @Override
     public List<Vessel> getSpecificVessels(List<Integer> vesselList){
 
-        //List<Vessel> vessels = repository.findAll().stream().filter(vessel -> vessel.ID.equals(vesselList.))
-        //List<Vessel> vessels = null;
-        //for (int i = 0; i < vesselList.size(); i++) {
-
         return repository.findAllById(vesselList);
 
     }
@@ -71,7 +67,7 @@ public class VesselServiceImpl implements VesselService {
         VesselResponse vesselResponse = new VesselResponse();
         vesselResponse.name = vessel.getName();
         vesselResponse.VRN =vessel.getVRN();
-        vesselResponse.ShipClass = vessel.getShipClass().getName();
+        vesselResponse.shipClass = vessel.getShipClass().getName();
         vesselResponse.CO = vessel.getCommandingOfficer().getName();
         return vesselResponse;
     }
