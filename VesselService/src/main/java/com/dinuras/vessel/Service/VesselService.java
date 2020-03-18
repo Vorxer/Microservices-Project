@@ -1,21 +1,27 @@
 package com.dinuras.vessel.Service;
 
+import com.dinuras.vessel.Model.Request.VesselUpdateRequest;
+import com.dinuras.vessel.Model.Response.VesselResponse;
 import com.dinuras.vessel.Model.Vessel;
-import com.dinuras.vessel.Model.VesselResponse;
 
 import java.util.List;
 
 public interface VesselService {
     Vessel getVesselByID(int id);
 
+    List<Vessel> getVessels();
+
     Vessel add(Vessel vessel);
+
+    List<Vessel> getVesselsByID(List<Integer> vesselList);
 
     void delete(Integer id);
 
-    List<Vessel> getVessels();
+    VesselResponse getVesselResponseByID(int id);
 
-    public List<Vessel> getSpecificVessels(List<Integer> vesselList);
+    List<VesselResponse> getAllVesselResponses();
 
-    public VesselResponse infoResponse(int id);
+    List<VesselResponse> getVesselResponsesByID(List<Integer> vesselList);
 
+    void updateVesselRecord(int ID, VesselUpdateRequest vesselUpdateRequest);
 }
