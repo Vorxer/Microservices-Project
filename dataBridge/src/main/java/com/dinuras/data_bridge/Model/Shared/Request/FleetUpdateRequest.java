@@ -1,0 +1,10 @@
+package com.dinuras.data_bridge.Model.Shared.Request;
+
+import lombok.Data;
+
+@Data
+public class FleetUpdateRequest {
+    public Integer operationalRange;
+    public Integer enduarance;
+    public String GPSLocation;
+}

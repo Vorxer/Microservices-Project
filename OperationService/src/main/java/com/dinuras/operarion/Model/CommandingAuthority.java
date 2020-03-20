@@ -1,4 +1,4 @@
-package com.dinuras.group_service.Model;
+package com.dinuras.operarion.Model;
 
 import lombok.Data;
 
@@ -7,16 +7,14 @@ import java.util.List;
 
 @Data
 @Entity
-public class OperationalBase {
-
+public class CommandingAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer ID;
+    public Integer ID;
+    public String name;
 
-    String name;
-
-    @OneToMany(mappedBy = "base")
-    List<Fleet> fleets;
+    @OneToMany(mappedBy = "commandingAuthority")
+    List<Operation> operations;
 
     public Integer getID() {
         return ID;
@@ -34,11 +32,11 @@ public class OperationalBase {
         this.name = name;
     }
 
-    public List<Fleet> getFleets() {
-        return fleets;
+    public List<Operation> getOperations() {
+        return operations;
     }
 
-    public void setFleets(List<Fleet> fleets) {
-        this.fleets = fleets;
+    public void setOperations(List<Operation> operations) {
+        this.operations = operations;
     }
 }

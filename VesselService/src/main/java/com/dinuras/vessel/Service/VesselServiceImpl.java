@@ -166,10 +166,10 @@ public class VesselServiceImpl implements VesselService {
         Vessel vessel = repository.findById(ID).get();
         if (vesselUpdateRequest.availableRange != null)
             vessel.setAvailableRange(vesselUpdateRequest.availableRange);
-        if (vesselUpdateRequest.combatReaddinesssRating != null)
-            vessel.setCombatReaddinesssRating(vesselUpdateRequest.combatReaddinesssRating);
-        if (vesselUpdateRequest.enduarance != null)
-            vessel.setEnduarance(vesselUpdateRequest.enduarance);
+        if (vesselUpdateRequest.combatReadinessRating != null)
+            vessel.setCombatReaddinesssRating(vesselUpdateRequest.combatReadinessRating);
+        if (vesselUpdateRequest.endurance != null)
+            vessel.setEnduarance(vesselUpdateRequest.endurance);
         repository.save(vessel);
     }
 

@@ -1,4 +1,4 @@
-package com.dinuras.vessel.Model.Request;
+package com.dinuras.data_bridge.Model.Shared.Request;
 
 import lombok.Data;
 

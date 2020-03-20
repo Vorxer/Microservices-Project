@@ -1,5 +1,6 @@
 package com.dinuras.group_service.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,8 +14,11 @@ public class VesselRecord {
     Integer ID;
 
     Integer vesselID;
-    Integer vesselName;
+    String vesselName;
 
+    String VRN;
+
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     Fleet fleet;
 }
