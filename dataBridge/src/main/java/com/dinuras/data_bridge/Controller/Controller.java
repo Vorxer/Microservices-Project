@@ -22,19 +22,19 @@ public class Controller {
     @Autowired
     DataService dataService;
 
-    @RequestMapping("/updateVessel")
-    public void updateVessel(@RequestBody VesselUpdateRequest vesselUpdateRequest) {
-        dataService.updateVessel(vesselUpdateRequest);
+    @RequestMapping("/updateVessel/{id}")
+    public String updateVessel(@PathVariable int id, @RequestBody VesselUpdateRequest vesselUpdateRequest){
+        return dataService.updateVessel(id,vesselUpdateRequest);
     }
 
-    @RequestMapping("/updateFleet")
-    public void updateFleet(@RequestBody FleetUpdateRequest fleetUpdateRequest) {
-        dataService.updateFleet(fleetUpdateRequest);
+    @RequestMapping("/updateFleet/{id}")
+    public String updateFleet(@PathVariable int id, @RequestBody FleetUpdateRequest fleetUpdateRequest){
+        return dataService.updateFleet(id,fleetUpdateRequest);
     }
 
-    @RequestMapping("/updateOperation")
-    public void updateOperation(@RequestBody OperationlUpdateRequest operationlUpdateRequest) {
-        dataService.updateOperation(operationlUpdateRequest);
+    @RequestMapping("/updateOperation/{id}")
+    public String updateOperation(@PathVariable int id, @RequestBody OperationlUpdateRequest operationUpdateRequest){
+        return dataService.updateOperation(id, operationUpdateRequest);
     }
 
     @RequestMapping("/getVessels")

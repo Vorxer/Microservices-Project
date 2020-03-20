@@ -10,13 +10,11 @@ import com.dinuras.data_bridge.Model.Shared.Response.VesselResponse;
 import java.util.List;
 
 public interface DataService {
+    String updateVessel(int id, VesselUpdateRequest vesselUpdateRequest);
 
-    void updateVessel(VesselUpdateRequest vesselUpdateRequest);
+    String updateFleet(int id, FleetUpdateRequest fleetUpdateRequest);
 
-    void updateFleet(FleetUpdateRequest fleetUpdateRequest);
-
-    void updateOperation(OperationlUpdateRequest operationlUpdateRequest);
-
+    String updateOperation(int id, OperationlUpdateRequest operationlUpdateRequest);
 
     List<VesselResponse> getVessels();
 
@@ -24,16 +22,17 @@ public interface DataService {
 
     List<OperationResponse> getOperations();
 
-
     VesselResponse getVessel(int id);
 
     FleetResponse getFleet(int id);
 
     OperationResponse getOperation(int id);
 
+    List<FleetResponse> getSpecificFleetsInfo(List<Integer> IDS);
+
+    List<VesselResponse> getSpecificVesselsInfo(List<Integer> IDS);
 
     List<VesselResponse> getVesselsByFleet(int fleetID);
 
     List<FleetResponse> getFleetByOperation(int operationID);
-
 }
