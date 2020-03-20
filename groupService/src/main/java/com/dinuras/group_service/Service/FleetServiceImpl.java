@@ -1,10 +1,9 @@
-package com.dinuras.fleet.Service;
+package com.dinuras.group_service.Service;
 
 import com.dinuras.group_service.Model.Request.FleetUpdateRequest;
 import com.dinuras.group_service.Model.Response.FleetResponse;
 import com.dinuras.group_service.Model.Fleet;
 import com.dinuras.group_service.Repository.FleetRepository;
-import com.dinuras.group_service.Service.FleetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FleetServiceImpl implements FleetService {
+public class FleetServiceImpl implements com.dinuras.group_service.Service.FleetService {
 
     @Autowired
     FleetRepository repository;

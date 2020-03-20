@@ -7,6 +7,9 @@ import java.util.List;
 @Data
 public class FleetResponse {
 
+    public FleetResponse() {
+    }
+
     public FleetResponse(Integer fleetID, String fleetName, Integer flagshipID, Integer flagCommanderID, Integer operationalRange, Integer enduarance, String GPSLocation, List<VesselRecord> vesselRecords, Integer baseID, String baseName) {
         this.fleetID = fleetID;
         this.fleetName = fleetName;

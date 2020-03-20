@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class OperationlUpdateRequest {
+
+    public OperationlUpdateRequest() {
+    }
+
     public String duration;
     public String status;
     public String location;

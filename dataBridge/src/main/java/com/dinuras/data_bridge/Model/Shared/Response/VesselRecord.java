@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class VesselRecord {
+
+    public VesselRecord() {
+    }
+
     Integer ID;
 
     Integer vesselID;

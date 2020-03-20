@@ -7,6 +7,9 @@ import java.util.List;
 @Data
 public class OperationResponse {
 
+    public OperationResponse() {
+    }
+
     public OperationResponse(Integer ID, String name, List<FleetRecord> fleetRecords,
                              String commandingAuthorityName, String duration, String status, String location, String log) {
         this.ID = ID;

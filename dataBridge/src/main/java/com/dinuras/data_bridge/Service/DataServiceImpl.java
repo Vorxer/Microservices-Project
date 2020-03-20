@@ -3,10 +3,7 @@ package com.dinuras.data_bridge.Service;
 import com.dinuras.data_bridge.Model.Shared.Request.FleetUpdateRequest;
 import com.dinuras.data_bridge.Model.Shared.Request.OperationlUpdateRequest;
 import com.dinuras.data_bridge.Model.Shared.Request.VesselUpdateRequest;
-import com.dinuras.data_bridge.Model.Shared.Response.FleetResponse;
-import com.dinuras.data_bridge.Model.Shared.Response.OperationResponse;
-import com.dinuras.data_bridge.Model.Shared.Response.VesselRecord;
-import com.dinuras.data_bridge.Model.Shared.Response.VesselResponse;
+import com.dinuras.data_bridge.Model.Shared.Response.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -22,9 +19,9 @@ import java.util.stream.Collectors;
 @Service
 public class DataServiceImpl implements DataService {
 
-    static final String vesselURL = "localhost:8080/vessel";
-    static final String fleetURL = "localhost:8090/fleet";
-    static final String operationURL = "localhost:8100/operation";
+    static final String vesselURL = "http://localhost:8080/vessel";
+    static final String fleetURL = "http://localhost:8090/fleet";
+    static final String operationURL = "http://localhost:8100/operation";
 
     @Bean
     RestTemplate restTemplate(){
@@ -57,56 +54,56 @@ public class DataServiceImpl implements DataService {
     @Override
     public List<VesselResponse> getVessels() {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<List<VesselResponse>> responseEntity = restTemplate().exchange(vesselURL + "/vessels", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<VesselResponse>>() {});
+        ResponseEntity<List<VesselResponse>> responseEntity = restTemplate().exchange(vesselURL + "/allVesselInfo", HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<VesselResponse>>() {});
         return responseEntity.getBody();
     }
 
     @Override
     public List<FleetResponse> getFleets() {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<List<FleetResponse>> responseEntity = restTemplate().exchange(fleetURL + "/fleets", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<FleetResponse>>() {});
+        ResponseEntity<List<FleetResponse>> responseEntity = restTemplate().exchange(fleetURL + "/allFleetInfo", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<FleetResponse>>() {});
         return responseEntity.getBody();
     }
 
     @Override
     public List<OperationResponse> getOperations() {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<List<OperationResponse>> responseEntity = restTemplate().exchange(operationURL + "/operations", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<OperationResponse>>() {});
+        ResponseEntity<List<OperationResponse>> responseEntity = restTemplate().exchange(operationURL + "/allOperationInfo", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<OperationResponse>>() {});
         return responseEntity.getBody();
     }
 
     @Override
     public VesselResponse getVessel(int id) {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<VesselResponse> responseEntity = restTemplate().exchange(vesselURL + "/vessel/" + id, HttpMethod.GET, httpEntity, VesselResponse.class);
+        ResponseEntity<VesselResponse> responseEntity = restTemplate().exchange(vesselURL + "/VesselInfo/" + id, HttpMethod.GET, httpEntity, VesselResponse.class);
         return responseEntity.getBody();
     }
 
     @Override
     public FleetResponse getFleet(int id) {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<FleetResponse> responseEntity = restTemplate().exchange(vesselURL + "/fleet/" + id, HttpMethod.GET, httpEntity, FleetResponse.class);
+        ResponseEntity<FleetResponse> responseEntity = restTemplate().exchange(fleetURL + "/FleetInfo/" + id, HttpMethod.GET, httpEntity, FleetResponse.class);
         return responseEntity.getBody();
     }
 
     @Override
     public OperationResponse getOperation(int id) {
         HttpEntity<String> httpEntity = new HttpEntity<>("", new HttpHeaders());
-        ResponseEntity<OperationResponse> responseEntity = restTemplate().exchange(operationURL + "/operation/" + id, HttpMethod.GET, httpEntity, OperationResponse.class);
+        ResponseEntity<OperationResponse> responseEntity = restTemplate().exchange(operationURL + "/OperationInfo/" + id, HttpMethod.GET, httpEntity, OperationResponse.class);
         return responseEntity.getBody();
     }
 
     @Override
     public List<FleetResponse> getSpecificFleetsInfo(List<Integer> IDS){
         HttpEntity<List> httpEntity = new HttpEntity<>(IDS, new HttpHeaders());
-        ResponseEntity<List<FleetResponse>> responseEntity = restTemplate().exchange(fleetURL + "/specificFleetsInfo", HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<FleetResponse>>() {});
+        ResponseEntity<List<FleetResponse>> responseEntity = restTemplate().exchange(fleetURL + "/specificFleetsInfo", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<FleetResponse>>() {});
         return responseEntity.getBody();
     }
 
     @Override
     public List<VesselResponse> getSpecificVesselsInfo(List<Integer> IDS){
         HttpEntity<List> httpEntity = new HttpEntity<>(IDS, new HttpHeaders());
-        ResponseEntity<List<VesselResponse>> responseEntity = restTemplate().exchange(vesselURL + "/specificVesselsInfo", HttpMethod.GET, httpEntity, new ParameterizedTypeReference<List<VesselResponse>>() {});
+        ResponseEntity<List<VesselResponse>> responseEntity = restTemplate().exchange(vesselURL + "/specificVesselsInfo", HttpMethod.POST, httpEntity, new ParameterizedTypeReference<List<VesselResponse>>() {});
         return responseEntity.getBody();
     }
 
@@ -125,9 +122,9 @@ public class DataServiceImpl implements DataService {
 
     @Override
     public List<FleetResponse> getFleetByOperation(int operationID) {
-        FleetResponse fleetResponse = getFleet(operationID);
-        if(fleetResponse != null){
-            List<Integer> FIDs = fleetResponse.getVesselRecords().stream().map(VesselRecord::getID)
+        OperationResponse operationResponse = getOperation(operationID);
+        if(operationResponse != null){
+            List<Integer> FIDs = operationResponse.getFleetRecords().stream().map(FleetRecord::getFleetID)
                     .collect(Collectors.toList());
             return getSpecificFleetsInfo(FIDs);
         }

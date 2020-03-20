@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class FleetUpdateRequest {
+
+    public FleetUpdateRequest() {
+    }
+
     public Integer operationalRange;
     public Integer enduarance;
     public String GPSLocation;

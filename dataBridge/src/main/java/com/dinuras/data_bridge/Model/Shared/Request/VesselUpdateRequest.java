@@ -4,6 +4,10 @@ import lombok.Data;
 
 @Data
 public class VesselUpdateRequest {
+
+    public VesselUpdateRequest() {
+    }
+
     public Integer availableRange;
     public Integer endurance;
     public Integer combatReadinessRating;

@@ -5,6 +5,9 @@ import lombok.Data;
 @Data
 public class FleetRecord {
 
+    public FleetRecord() {
+    }
+
     Integer fleetID;
 
     String fleetName;
