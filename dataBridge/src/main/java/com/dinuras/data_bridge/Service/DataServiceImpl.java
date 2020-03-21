@@ -32,7 +32,7 @@ public class DataServiceImpl implements DataService {
     public String updateVessel(int id, VesselUpdateRequest vesselUpdateRequest) {
 
         HttpEntity<VesselUpdateRequest> httpEntity = new HttpEntity<>(vesselUpdateRequest, new HttpHeaders());
-        ResponseEntity<String> responseEntity = restTemplate().exchange(vesselURL + "/update/"+id, HttpMethod.GET, httpEntity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate().exchange(vesselURL + "/update/"+id, HttpMethod.POST, httpEntity, String.class);
         return responseEntity.getBody();
 
     }
@@ -40,14 +40,14 @@ public class DataServiceImpl implements DataService {
     @Override
     public String updateFleet(int id, FleetUpdateRequest fleetUpdateRequest) {
         HttpEntity<FleetUpdateRequest> httpEntity = new HttpEntity<>(fleetUpdateRequest, new HttpHeaders());
-        ResponseEntity<String> responseEntity = restTemplate().exchange(fleetURL + "/update/"+id, HttpMethod.GET, httpEntity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate().exchange(fleetURL + "/update/"+id, HttpMethod.POST, httpEntity, String.class);
         return responseEntity.getBody();
     }
 
     @Override
     public String updateOperation(int id, OperationlUpdateRequest operationlUpdateRequest) {
         HttpEntity<OperationlUpdateRequest> httpEntity = new HttpEntity<>(operationlUpdateRequest, new HttpHeaders());
-        ResponseEntity<String> responseEntity = restTemplate().exchange(operationURL + "/update/"+id, HttpMethod.GET, httpEntity, String.class);
+        ResponseEntity<String> responseEntity = restTemplate().exchange(operationURL + "/update/"+id, HttpMethod.POST, httpEntity, String.class);
         return responseEntity.getBody();
     }
 
