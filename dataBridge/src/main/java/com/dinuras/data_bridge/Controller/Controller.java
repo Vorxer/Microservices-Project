@@ -8,15 +8,14 @@ import com.dinuras.data_bridge.Model.Shared.Response.OperationResponse;
 import com.dinuras.data_bridge.Model.Shared.Response.VesselResponse;
 import com.dinuras.data_bridge.Service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/bridge")
+@CrossOrigin(origins = "http://localhost:4200")
 public class Controller {
 
     @Autowired
@@ -51,6 +50,7 @@ public class Controller {
     public List<OperationResponse> getOperations() {
         return dataService.getOperations();
     }
+
 
     @RequestMapping("/getVessel/{id}")
     public VesselResponse getVessel(@PathVariable int id) {
