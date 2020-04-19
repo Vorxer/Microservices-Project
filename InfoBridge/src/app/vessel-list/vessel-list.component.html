@@ -1,0 +1,14 @@
+<table border="1">
+  <tr>
+    <th width="25%">Reporting Name</th>
+    <th width="25%">Class</th>
+    <th width="10%">Hull Number</th>
+    <th width="35%">Command</th>
+    <th width="5%"></th>
+  </tr>
+</table>
+<ul>
+  <li *ngFor="let vessel of vessels">
+    <app-short-vessel-record VID="{{vessel}}"></app-short-vessel-record>
+  </li>
+</ul>

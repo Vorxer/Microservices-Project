@@ -1,4 +1,51 @@
-<p>{{longVesselRecord.className}} Class Vessel {{longVesselRecord.vesselName}}</p>
-<p>{{longVesselRecord.vrn}}</p>
-<p>{{longVesselRecord.commanderRank}} {{longVesselRecord.commanderName}}</p>
-<p>{{longVesselRecord.combatReaddinesssRating}}</p>
+<p>Record of the {{longVesselRecord.className}} Class Vessel {{longVesselRecord.vesselName}}</p>
+<p>Hull Number {{longVesselRecord.vrn}}</p>
+<p>Under the command of {{longVesselRecord.commanderRank}} {{longVesselRecord.commanderName}}</p>
+
+Specifications
+<table border="1">
+  <tr>
+    <th width="50%">Endurance</th>
+    <th width="50%">{{longVesselRecord.enduarance}} Days</th>
+  </tr>
+  <tr>
+  <tr>
+    <th width="50%">Cruise Speed</th>
+    <th width="50%">{{longVesselRecord.cruiseSpeed}} Knots</th>
+  </tr>
+  <tr>
+    <th width="50%">Flank Speed</th>
+    <th width="50%">{{longVesselRecord.flankSpeed}} Knots</th>
+  </tr>
+</table>
+
+<br>
+
+Operational Information
+<table border="1">
+  <tr>
+    <th width="50%">Available Range</th>
+    <th width="50%">{{longVesselRecord.availableRange}} Nautical Miles</th>
+  </tr>
+  <tr>
+    <th width="50%">Combat Readiness</th>
+    <th width="50%">{{longVesselRecord.combatReaddinesssRating}}%</th>
+  </tr>
+  <tr>
+    <th width="50%">Anti Ship Rating</th>
+    <th width="50%">{{longVesselRecord.stsCombatRating}}%</th>
+  </tr>
+  <tr>
+    <th width="50%">Anti Aircraft Rating</th>
+    <th width="50%">{{longVesselRecord.aaCombatRating}}%</th>
+  </tr>
+  <tr>
+    <th width="50%">Anti Submarine Rating</th>
+    <th width="50%">{{longVesselRecord.aswCombatRating}}%</th>
+  </tr>
+  <tr>
+    <th width="50%">Point Defence Rating</th>
+    <th width="50%">{{longVesselRecord.pdsRating}}%</th>
+  </tr>
+</table>
+

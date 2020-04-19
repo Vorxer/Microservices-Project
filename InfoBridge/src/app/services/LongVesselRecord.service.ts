@@ -23,6 +23,10 @@ export class LongVesselRecordService {
      return this.http.get<LongVesselRecord>(this.todosUrl + VID);
    }
 
+  public updateVessel(VID: number): Observable<LongVesselRecord> {
+    return this.http.get<LongVesselRecord>(this.todosUrl + VID);
+  }
+
   // // Get Todos
   // getTodos(): Observable<Todo[]> {
   //   return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);

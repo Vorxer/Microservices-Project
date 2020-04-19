@@ -1,0 +1,9 @@
+<table border="1">
+    <tr>
+      <th width="25%">{{record.vesselName}}</th>
+      <th width="25%">{{record.className}}</th>
+      <th width="10%">{{record.vrn}}</th>
+      <th width="35%">{{record.commanderRank}} {{record.commanderName}}</th>
+      <th width="5" ><a [routerLink]="['/vesselRecord/' + record.vesselID]">Details</a></th><th width="5" ></th>
+    </tr>
+</table>
