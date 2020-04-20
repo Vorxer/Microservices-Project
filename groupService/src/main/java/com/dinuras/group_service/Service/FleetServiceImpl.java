@@ -75,7 +75,7 @@ public class FleetServiceImpl implements com.dinuras.group_service.Service.Fleet
                     f.getFlagshipID(),
                     f.getFlagCommanderID(),
                     f.getOperationalRange(),
-                    f.getEnduarance(),
+                    f.getEndurance(),
                     f.getGPSLocation(),
                     f.getVesselRecords(),
                     f.getBase().getID(),
@@ -101,7 +101,7 @@ public class FleetServiceImpl implements com.dinuras.group_service.Service.Fleet
                     f.getFlagshipID(),
                     f.getFlagCommanderID(),
                     f.getOperationalRange(),
-                    f.getEnduarance(),
+                    f.getEndurance(),
                     f.getGPSLocation(),
                     f.getVesselRecords(),
                     f.getBase().getID(),
@@ -127,7 +127,7 @@ public class FleetServiceImpl implements com.dinuras.group_service.Service.Fleet
                     f.getFlagshipID(),
                     f.getFlagCommanderID(),
                     f.getOperationalRange(),
-                    f.getEnduarance(),
+                    f.getEndurance(),
                     f.getGPSLocation(),
                     f.getVesselRecords(),
                     f.getBase().getID(),
@@ -143,12 +143,12 @@ public class FleetServiceImpl implements com.dinuras.group_service.Service.Fleet
     @Override
     public void updateFleetRecord(int ID, FleetUpdateRequest fleetUpdateRequest){
         Fleet fleet = repository.findById(ID).get();
-        if (fleetUpdateRequest.enduarance != null)
-            fleet.setEnduarance(fleetUpdateRequest.enduarance);
+        if (fleetUpdateRequest.endurance != null)
+            fleet.setEndurance(fleetUpdateRequest.endurance);
         if (fleetUpdateRequest.GPSLocation != null)
             fleet.setGPSLocation(fleetUpdateRequest.GPSLocation);
         if (fleetUpdateRequest.operationalRange != null)
-            fleet.setEnduarance(fleetUpdateRequest.operationalRange);
+            fleet.setOperationalRange(fleetUpdateRequest.operationalRange);
         repository.save(fleet);
     }
 

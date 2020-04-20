@@ -19,7 +19,7 @@ public class Fleet{
     Integer flagCommanderID;
 
     Integer operationalRange;
-    Integer enduarance;
+    Integer endurance;
 
     String GPSLocation;
 
@@ -69,12 +69,12 @@ public class Fleet{
         this.operationalRange = operationalRange;
     }
 
-    public Integer getEnduarance() {
-        return enduarance;
+    public Integer getEndurance() {
+        return endurance;
     }
 
-    public void setEnduarance(Integer enduarance) {
-        this.enduarance = enduarance;
+    public void setEndurance(Integer endurance) {
+        this.endurance = endurance;
     }
 
     public String getGPSLocation() {

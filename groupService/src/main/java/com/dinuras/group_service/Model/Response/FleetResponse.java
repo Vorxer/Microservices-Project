@@ -71,11 +71,11 @@ public class FleetResponse {
         this.operationalRange = operationalRange;
     }
 
-    public Integer getEnduarance() {
+    public Integer getEndurance() {
         return enduarance;
     }
 
-    public void setEnduarance(Integer enduarance) {
+    public void setEndurance(Integer enduarance) {
         this.enduarance = enduarance;
     }
 

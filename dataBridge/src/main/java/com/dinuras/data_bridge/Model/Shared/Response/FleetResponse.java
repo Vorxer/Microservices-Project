@@ -10,13 +10,13 @@ public class FleetResponse {
     public FleetResponse() {
     }
 
-    public FleetResponse(Integer fleetID, String fleetName, Integer flagshipID, Integer flagCommanderID, Integer operationalRange, Integer enduarance, String GPSLocation, List<VesselRecord> vesselRecords, Integer baseID, String baseName) {
+    public FleetResponse(Integer fleetID, String fleetName, Integer flagshipID, Integer flagCommanderID, Integer operationalRange, Integer endurance, String GPSLocation, List<VesselRecord> vesselRecords, Integer baseID, String baseName) {
         this.fleetID = fleetID;
         this.fleetName = fleetName;
         FlagshipID = flagshipID;
         this.flagCommanderID = flagCommanderID;
         this.operationalRange = operationalRange;
-        this.enduarance = enduarance;
+        this.endurance = endurance;
         this.GPSLocation = GPSLocation;
         this.vesselRecords = vesselRecords;
         this.baseID = baseID;
@@ -28,7 +28,7 @@ public class FleetResponse {
     Integer FlagshipID;
     Integer flagCommanderID;
     Integer operationalRange;
-    Integer enduarance;
+    Integer endurance;
     String GPSLocation;
     List<VesselRecord> vesselRecords;
 
@@ -75,12 +75,12 @@ public class FleetResponse {
         this.operationalRange = operationalRange;
     }
 
-    public Integer getEnduarance() {
-        return enduarance;
+    public Integer getEndurance() {
+        return endurance;
     }
 
-    public void setEnduarance(Integer enduarance) {
-        this.enduarance = enduarance;
+    public void setEndurance(Integer endurance) {
+        this.endurance = endurance;
     }
 
     public String getGPSLocation() {

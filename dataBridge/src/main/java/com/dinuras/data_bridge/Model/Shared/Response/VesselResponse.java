@@ -81,11 +81,11 @@ public class VesselResponse {
         this.availableRange = availableRange;
     }
 
-    public Integer getEnduarance() {
+    public Integer getEndurance() {
         return enduarance;
     }
 
-    public void setEnduarance(Integer enduarance) {
+    public void setEndurance(Integer enduarance) {
         this.enduarance = enduarance;
     }
 

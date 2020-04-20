@@ -51,13 +51,12 @@ public class Controller {
         return dataService.getOperations();
     }
 
-
     @RequestMapping("/getVessel/{id}")
     public VesselResponse getVessel(@PathVariable int id) {
         return dataService.getVessel(id);
     }
 
-    @RequestMapping("/getFleet/{id)")
+    @RequestMapping("/getFleet/{id}")
     public FleetResponse getFleet(@PathVariable int id) {
         return dataService.getFleet(id);
     }
