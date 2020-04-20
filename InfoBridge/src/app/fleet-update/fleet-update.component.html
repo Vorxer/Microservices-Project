@@ -1,1 +1,18 @@
-<p>fleet-update works!</p>
+RANGE <input
+  type = "number"
+  class = "form-control"
+  [(ngModel)]="operationalRange">
+<br>
+ENDURANCE <input
+  type = "number"
+  class = "form-control"
+  [(ngModel)]="endurance">
+{{endurance}}
+<br>
+GPS Location<input
+  class = "form-control"
+  [(ngModel)]="GPSLocation">
+<br>
+<button
+  class="btn btn-primary"
+  (click) = "update()">Add Server</button>
