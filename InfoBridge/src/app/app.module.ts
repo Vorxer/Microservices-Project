@@ -9,6 +9,10 @@ import {FormsModule} from '@angular/forms';
 import { VesselListComponent } from './vessel-list/vessel-list.component';
 import {AppRoutingModule} from './app-routing.module';
 import { VesselUpdateComponent } from './vessel-update/vessel-update.component';
+import { FleetListComponent } from './fleet-list/fleet-list.component';
+import { ShortFleetRecordComponent } from './short-fleet-record/short-fleet-record.component';
+import { LongFleetRecordComponent } from './long-fleet-record/long-fleet-record.component';
+import { FleetUpdateComponent } from './fleet-update/fleet-update.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { VesselUpdateComponent } from './vessel-update/vessel-update.component';
     LongVesselRecordComponent,
     ShortVesselRecordComponent,
     VesselListComponent,
-    VesselUpdateComponent
+    VesselUpdateComponent,
+    FleetListComponent,
+    ShortFleetRecordComponent,
+    LongFleetRecordComponent,
+    FleetUpdateComponent
   ],
   imports: [
     BrowserModule,

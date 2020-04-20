@@ -1,0 +1,29 @@
+<p>Record of the {{longFleetRecord.fleetName}} </p>
+<p>Based ar {{longFleetRecord.baseName}}</p>
+<p>FleetID {{longFleetRecord.fleetID}}</p>
+<!--<p>Flagship {{flagshipRecord.vesselName}}</p>-->
+
+Operational Information
+<table border="1">
+  <tr>
+    <th width="50%">Endurance</th>
+    <th width="50%">{{longFleetRecord.endurance}} Days</th>
+  </tr>
+  <tr>
+  <tr>
+    <th width="50%">Location</th>
+    <th width="50%">{{longFleetRecord.gpslocation}} Knots</th>
+  </tr>
+</table>
+
+<br>
+VESSELS
+<app-vessel-list [vessels]=getVesselList()></app-vessel-list>
+
+<br>
+
+
+<button
+  class="btn btn-primary"
+  [routerLink]="['/fleetUpdate/' + longFleetRecord.fleetID]">Update Form</button>
+

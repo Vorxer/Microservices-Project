@@ -5,10 +5,12 @@ export class LongFleetRecord {
   fleetName: string;
   flagCommanderID: number;
   operationalRange: number;
-  enduarance: number;
-  vesselRecords: ShortVesselRecord[];
+  endurance: number;
+  public vesselRecords: ShortVesselRecord[];
   baseID: number;
   baseName: string;
   flagshipID: number;
   gpslocation: string;
+
+
 }

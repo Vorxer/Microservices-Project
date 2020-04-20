@@ -1,0 +1,14 @@
+<table border="1">
+  <tr>
+    <th width="25%">Fleet</th>
+    <th width="25%">Base</th>
+    <th width="10%">Endurance</th>
+    <th width="35%">Flag Comander ID</th>
+    <th width="5%" ></th><th width="5" ></th>
+  </tr>
+</table>
+<ul>
+  <li *ngFor="let fleet of fleets">
+    <app-short-fleet-record FID="{{fleet}}"></app-short-fleet-record>
+  </li>
+</ul>

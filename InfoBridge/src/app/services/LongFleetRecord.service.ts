@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 
-import {VesselUpdateBody} from '../models/VesselUpdateBody';
 import {LongFleetRecord} from '../models/LongFleetRecord';
+import {FleetUpdateBody} from '../models/FleetUpdateBody';
 
 
 const httpOptions = {
@@ -17,6 +17,7 @@ const httpOptions = {
 })
 export class LongFleetRecordService {
   getUrl = 'http://localhost:8200/bridge/getFleet/';
+  getAllUrl = 'http://localhost:8200/bridge/getFleets/';
   updateUrl = 'http://localhost:8200/bridge/updateFleet/';
 
   constructor(private http: HttpClient) { }
@@ -27,10 +28,14 @@ export class LongFleetRecordService {
     return this.http.get<LongFleetRecord>(this.getUrl + FID);
   }
 
-  public updateFleet(VID: number, availableRange: number,  endurance: number, combatReadinessRating: number):
+  public getFleets(): Observable<LongFleetRecord[]> {
+    return this.http.get<LongFleetRecord[]>(this.getAllUrl);
+  }
+
+  public updateFleet(FID: number , operationalRange: number, endurance: number, GPSLocation: string):
     void {
-    const updateBody: VesselUpdateBody = new VesselUpdateBody(availableRange, endurance, combatReadinessRating);
-    this.http.post<any>(this.updateUrl + VID, updateBody).subscribe();
+    const updateBody: FleetUpdateBody = new FleetUpdateBody(operationalRange, endurance, GPSLocation);
+    this.http.post<any>(this.updateUrl + FID, updateBody).subscribe();
   }
 
 }

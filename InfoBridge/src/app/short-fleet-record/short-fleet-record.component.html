@@ -1,0 +1,9 @@
+<table border="1">
+  <tr>
+    <th width="25%">{{record.fleetName}}</th>
+    <th width="25%">{{record.baseName}}</th>
+    <th width="10%">{{record.endurance}}</th>
+    <th width="35%">{{record.flagCommanderID}}</th>
+    <th width="5%" ><a [routerLink]="['/fleetRecord/' + record.fleetID]">Details</a></th><th width="5" ></th>
+  </tr>
+</table>

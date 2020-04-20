@@ -1,4 +1,4 @@
-export class ShortVesselRecord{
+export class ShortVesselRecord {
     vesselID: number;
     vesselName: string;
     id: number;
