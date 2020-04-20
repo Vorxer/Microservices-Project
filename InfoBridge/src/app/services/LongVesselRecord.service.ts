@@ -43,12 +43,9 @@ export class LongVesselRecordService {
      return this.http.get<LongVesselRecord>(this.getUrl + VID);
    }
 
-  public updateVessel(VID: number, availableRange: number,  enduarance: number, combatReaddinesssRating: number):
+  public updateVessel(VID: number, availableRange: number,  endurance: number, combatReadinessRating: number):
     void {
-    let updateBody: VesselUpdateBody = new VesselUpdateBody();
-    updateBody.availableRange = availableRange;
-    updateBody.enduarance = enduarance;
-    updateBody.combatReaddinesssRating = combatReaddinesssRating;
+    const updateBody: VesselUpdateBody = new VesselUpdateBody(availableRange, endurance, combatReadinessRating);
     this.http.post<any>(this.updateUrl + VID, updateBody).subscribe();
   }
 

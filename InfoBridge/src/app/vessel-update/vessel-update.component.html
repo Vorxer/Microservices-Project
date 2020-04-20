@@ -1,15 +1,21 @@
-<input
+RANGE <input
   type = "number"
   class = "form-control"
   [(ngModel)]="availableRange">
-<input
+{{availableRange}}
+<br>
+ENDURANCE <input
   type = "number"
   class = "form-control"
   [(ngModel)]="endurance">
-<input
+{{endurance}}
+<br>
+COMBAT READINESS<input
   type = "number"
   class = "form-control"
   [(ngModel)]="combatReadinessRating">
+{{combatReadinessRating}}
+<br>
 <button
   class="btn btn-primary"
   (click) = "update()">Add Server</button>
