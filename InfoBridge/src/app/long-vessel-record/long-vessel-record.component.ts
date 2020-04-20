@@ -24,4 +24,7 @@ export class LongVesselRecordComponent implements OnInit {
       this.longVesselRecord = longVesselRecord;
     });
   }
+
+  update() {
+  }
 }

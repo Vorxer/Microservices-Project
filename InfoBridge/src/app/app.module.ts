@@ -8,13 +8,15 @@ import { ShortVesselRecordComponent } from './short-vessel-record/short-vessel-r
 import {FormsModule} from '@angular/forms';
 import { VesselListComponent } from './vessel-list/vessel-list.component';
 import {AppRoutingModule} from './app-routing.module';
+import { VesselUpdateComponent } from './vessel-update/vessel-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LongVesselRecordComponent,
     ShortVesselRecordComponent,
-    VesselListComponent
+    VesselListComponent,
+    VesselUpdateComponent
   ],
   imports: [
     BrowserModule,
