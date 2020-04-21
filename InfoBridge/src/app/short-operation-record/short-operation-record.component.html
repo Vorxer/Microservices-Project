@@ -1,0 +1,9 @@
+<table border="1">
+  <tr>
+    <th width="25%">{{record.name}}</th>
+    <th width="25%">{{record.duration}}</th>
+    <th width="25%">{{record.location}}</th>
+    <th width="20%">{{record.status}}</th>
+    <th width="5%" ><a [routerLink]="['/operationRecord/' + record.ID]">Details</a></th><th width="5" ></th>
+  </tr>
+</table>

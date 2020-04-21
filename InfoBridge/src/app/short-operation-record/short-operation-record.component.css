@@ -1,0 +1,15 @@
+table{
+  border-collapse: collapse;
+  font: 15px Arial, sans-serif;
+  text-align: left;
+  border: white;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  color: black;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+

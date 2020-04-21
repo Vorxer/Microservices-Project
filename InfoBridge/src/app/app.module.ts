@@ -13,6 +13,10 @@ import { FleetListComponent } from './fleet-list/fleet-list.component';
 import { ShortFleetRecordComponent } from './short-fleet-record/short-fleet-record.component';
 import { LongFleetRecordComponent } from './long-fleet-record/long-fleet-record.component';
 import { FleetUpdateComponent } from './fleet-update/fleet-update.component';
+import { OperationListComponent } from './operation-list/operation-list.component';
+import { ShortOperationRecordComponent } from './short-operation-record/short-operation-record.component';
+import { LongOperationRecordComponent } from './long-operation-record/long-operation-record.component';
+import { OperationUpdateComponent } from './operation-update/operation-update.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { FleetUpdateComponent } from './fleet-update/fleet-update.component';
     FleetListComponent,
     ShortFleetRecordComponent,
     LongFleetRecordComponent,
-    FleetUpdateComponent
+    FleetUpdateComponent,
+    OperationListComponent,
+    ShortOperationRecordComponent,
+    LongOperationRecordComponent,
+    OperationUpdateComponent
   ],
   imports: [
     BrowserModule,

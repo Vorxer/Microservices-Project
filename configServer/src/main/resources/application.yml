@@ -1,5 +1,14 @@
 server:
   port: 8191
+
 spring:
-  profiles:
-    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Vorxer/Microservices-Project-Config
+          clone-on-start: true
+
+#    server.port=8888
+#    spring.cloud.config.server.git.uri=ssh://localhost/config-repo
+#    spring.cloud.config.server.git.clone-on-start=true

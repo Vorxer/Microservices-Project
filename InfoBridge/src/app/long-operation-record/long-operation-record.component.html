@@ -1,0 +1,30 @@
+<p>Record of the Operation: {{operationRecord.name}} </p>
+<p>Commanding Authority: {{operationRecord.commandingAuthorityName}}</p>
+<p>Operation Duration: {{operationRecord.duration}}</p>
+<!--<p>Flagship {{flagshipRecord.vesselName}}</p>-->
+
+Operational Information
+<table border="1">
+  <tr>
+    <th width="50%">Location</th>
+    <th width="50%">{{operationRecord.location}}</th>
+  </tr>
+  <tr>
+    <th width="50%">Status</th>
+    <th width="50%">{{operationRecord.status}}</th>
+  </tr>
+</table>
+
+<br>
+LOG
+<br>
+{{operationRecord.log}}
+<br>
+<br>
+FLEETS
+<app-fleet-list [fleets]=getFleetList()></app-fleet-list>
+<br>
+<button
+  class="btn btn-primary"
+  [routerLink]="['/operationUpdate/' + operationRecord.ID]">Update Form</button>
+

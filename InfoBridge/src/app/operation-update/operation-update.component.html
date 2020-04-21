@@ -1,0 +1,20 @@
+RANGE <input
+  type = "number"
+  class = "form-control"
+  [(ngModel)]="duration">
+<br>
+STATUS <input
+  class = "form-control"
+  [(ngModel)]="status">
+<br>
+LOCATION<input
+  class = "form-control"
+  [(ngModel)]="location">
+<br>
+LOG<input
+  class = "form-control"
+  [(ngModel)]="log">
+<br>
+<button
+  class="btn btn-primary"
+  (click) = "update()">Add Server</button>

@@ -1,0 +1,14 @@
+<table border="1">
+  <tr>
+    <th width="25%">Name </th>
+    <th width="25%">Duration </th>
+    <th width="25%">Location </th>
+    <th width="20%">Status</th>
+    <th width="5%" ></th>
+  </tr>
+</table>
+<ul>
+  <li *ngFor="let operation of operations">
+    <app-short-operation-record OID="{{operation}}"></app-short-operation-record>
+  </li>
+</ul>
