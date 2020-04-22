@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
-COPY . /data-bridge-0.0.1-SNAPSHOT.jar
-CMD apt install java
-CMD javac -jar data-bridge-0.0.1-SNAPSHOT.jar
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY config-server-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

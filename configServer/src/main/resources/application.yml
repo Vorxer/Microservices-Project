@@ -6,7 +6,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Vorxer/Microservices-Project-Config
+          uri: https://github.com/Vorxer/Vorxer-Microservices-Project-Config
           clone-on-start: true
 
 #    server.port=8888

@@ -1,11 +1,16 @@
 spring:
   application:
-    name: vesselService
+    name: vessel
   profiles:
     active: default
   cloud:
     config:
-      uri: http://localhost:8191
+      uri: http://192.168.1.70:8191
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://discovery/eureka/
 
 #spring.application.name=config-client
 #spring.profiles.active=development
