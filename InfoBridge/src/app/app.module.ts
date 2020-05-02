@@ -17,6 +17,7 @@ import { OperationListComponent } from './operation-list/operation-list.componen
 import { ShortOperationRecordComponent } from './short-operation-record/short-operation-record.component';
 import { LongOperationRecordComponent } from './long-operation-record/long-operation-record.component';
 import { OperationUpdateComponent } from './operation-update/operation-update.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { OperationUpdateComponent } from './operation-update/operation-update.co
     OperationListComponent,
     ShortOperationRecordComponent,
     LongOperationRecordComponent,
-    OperationUpdateComponent
+    OperationUpdateComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

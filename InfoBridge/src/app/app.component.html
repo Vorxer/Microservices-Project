@@ -1,3 +1,29 @@
-<h1>{{title}}</h1>
-<router-outlet></router-outlet>
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th width="20%"><app-sidebar></app-sidebar></th>-->
+<!--    <th width="80%"><router-outlet></router-outlet></th>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<!--<body>-->
+<!--<table border="1">-->
+<!--  <tr>-->
+<!--    <th width="20%"><app-sidebar></app-sidebar></th>-->
+<!--    <th width="80%"><router-outlet></router-outlet></th>-->
+<!--  </tr>-->
+<!--</table>-->
+<!--</body>-->
+
+<!-- Side navigation -->
+<div class="sidenav">
+  <img src="/assets/uncf.png"alt="UNCF" style="width:400px;height:200px;" border="0">
+  <p align="center"><a routerLink="vessels">Vessels</a></p>
+  <p align="center"><a routerLink="fleets">Fleets</a></p>
+  <p align="center"><a routerLink="operations">Operations</a></p>
+</div>
+
+<!-- Page content -->
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
 

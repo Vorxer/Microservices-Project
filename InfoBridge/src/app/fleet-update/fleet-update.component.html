@@ -1,18 +1,51 @@
-RANGE <input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="operationalRange">
+<!--RANGE <input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="operationalRange">-->
+<!--<br>-->
+<!--ENDURANCE <input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="endurance">-->
+<!--{{endurance}}-->
+<!--<br>-->
+<!--GPS Location<input-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="GPSLocation">-->
+<!--<br>-->
+<!--<button-->
+<!--  class="btn btn-primary"-->
+<!--  (click) = "update()">Add Server</button>-->
+
 <br>
-ENDURANCE <input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="endurance">
-{{endurance}}
 <br>
-GPS Location<input
-  class = "form-control"
-  [(ngModel)]="GPSLocation">
+<br>
+<br>
+<table border="1">
+  <tr>
+    <th width="50%">RANGE</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="operationalRange"></th>
+  </tr>
+  <tr>
+    <th width="50%">ENDURANCE</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="endurance"></th>
+  </tr>
+  <tr>
+    <th width="50%">GPS LOCATION</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="GPSLocation"></th>
+  </tr>
+</table>
 <br>
 <button
+  style=""
   class="btn btn-primary"
-  (click) = "update()">Add Server</button>
+  (click) = "update()">Update</button>

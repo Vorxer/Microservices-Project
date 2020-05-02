@@ -1,20 +1,62 @@
-RANGE <input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="duration">
+<!--DURATION <input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="duration">-->
+<!--<br>-->
+<!--STATUS <input-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="status">-->
+<!--<br>-->
+<!--LOCATION<input-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="location">-->
+<!--<br>-->
+<!--LOG<input-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="log">-->
+<!--<br>-->
+<!--<button-->
+<!--  class="btn btn-primary"-->
+<!--  (click) = "update()">Add Server</button>-->
+
+
+
 <br>
-STATUS <input
-  class = "form-control"
-  [(ngModel)]="status">
 <br>
-LOCATION<input
-  class = "form-control"
-  [(ngModel)]="location">
 <br>
-LOG<input
-  class = "form-control"
-  [(ngModel)]="log">
+<br>
+<table border="1">
+  <tr>
+    <th width="50%">DURATION</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="duration"></th>
+  </tr>
+  <tr>
+    <th width="50%">STATUS</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="status"></th>
+  </tr>
+  <tr>
+    <th width="50%">LOCATION</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="location"></th>
+  </tr>
+  <tr>
+    <th width="50%">LOG</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="log"></th>
+  </tr>
+</table>
 <br>
 <button
+  style=""
   class="btn btn-primary"
-  (click) = "update()">Add Server</button>
+  (click) = "update()">Update</button>

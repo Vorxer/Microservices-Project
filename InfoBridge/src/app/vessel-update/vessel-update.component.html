@@ -1,24 +1,50 @@
-RANGE <input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="availableRange">
-{{availableRange}}
+<!--RANGE <input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="availableRange">-->
+<!--{{availableRange}}-->
+<!--<br>-->
+<!--ENDURANCE <input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="endurance">-->
+<!--{{endurance}}-->
+<!--<br>-->
+<!--COMBAT READINESS<input-->
+<!--  type = "number"-->
+<!--  class = "form-control"-->
+<!--  [(ngModel)]="combatReadinessRating">-->
+<!--{{combatReadinessRating}}-->
+<!--<br>-->
 <br>
-ENDURANCE <input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="endurance">
-{{endurance}}
 <br>
-COMBAT READINESS<input
-  type = "number"
-  class = "form-control"
-  [(ngModel)]="combatReadinessRating">
-{{combatReadinessRating}}
+<br>
+<br>
+<table border="1">
+  <tr>
+    <th width="50%">RANGE</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="availableRange"></th>
+  </tr>
+  <tr>
+    <th width="50%">ENDURANCE</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="endurance"></th>
+  </tr>
+  <tr>
+    <th width="50%">COMBAT READINESS</th>
+    <th width="50%"><input
+      type = "number"
+      class = "form-control"
+      [(ngModel)]="combatReadinessRating"></th>
+  </tr>
+</table>
 <br>
 <button
+  style=""
   class="btn btn-primary"
-  (click) = "update()">Add Server</button>
-<!--
-<p>{{serverCreationStatus}}</p>
--->
+  (click) = "update()">Update</button>
